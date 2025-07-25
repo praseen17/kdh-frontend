@@ -10,13 +10,13 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "AIzaSyDBE94QOH3vh9Hc527yjE_4MueKA3IkzCE",
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "kokonda-s.firebaseapp.com",
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "kokonda-s",
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || "kokonda-s.appspot.com",
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || "1003132659473",
-  appId: process.env.REACT_APP_FIREBASE_APP_ID || "1:1003132659473:web:dea0b7c70e5987789c0eb0",
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID || "G-17VW2ZEPMY"
+  apiKey: "AIzaSyDBE94QOH3vh9Hc527yjE_4MueKA3IkzCE",
+  authDomain: "kokonda-s.firebaseapp.com",
+  projectId: "kokonda-s",
+  storageBucket: "kokonda-s.firebasestorage.app",
+  messagingSenderId: "1003132659473",
+  appId: "1:1003132659473:web:dea0b7c70e5987789c0eb0",
+  measurementId: "G-17VW2ZEPMY"
 };
 
 if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
