@@ -1,0 +1,678 @@
+html, body, .kdh-home {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  box-shadow: inset 1px 0px 5px rgba(0, 0, 0, 0.25);
+  color: #1E1E1E;
+}
+.kdh-hero-title-diagonal {
+  color: black; /* Inner fill */
+  -webkit-text-stroke: 1px rgb(0, 0, 0); /* Stroke width and color */
+  text-align: center; 
+  font-size: 3rem; /* adjust as needed */
+  font-weight: bold;
+}
+
+.kdh-hero {
+  background: transparent;
+  color: #b81010;
+  padding: 4rem 2rem 3rem 2rem;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 4px 24px rgba(39, 8, 8, 0.08);
+}
+.kdh-hero-content h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.kdh-hero-tagline {
+  color: #FABA3D;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.kdh-hero-cta {
+  background: #EC221F;
+  color: #fff;
+  padding: 0.8rem 2.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 1px solid #C00F0C;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.12);
+}
+.kdh-hero-cta:hover {
+  background: #fff;
+  color: #C92029;
+  border: 1px solid #FABA3D;
+}
+/* New for Hero Section Overlay */
+.kdh-hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.kdh-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
+  z-index: 1;
+}
+
+.kdh-hero-content-diagonal {
+  position: relative;
+  z-index: 2;
+}
+
+.kdh-section {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 1.5rem 1rem;
+  background: #E7BBBB;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(178,34,34,0.06);
+  text-align: center;
+}
+.kdh-section h3 {
+  color: #902929;
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.kdh-services-list, .kdh-locations-list, .kdh-reviews-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.kdh-service-card, .kdh-location-card, .kdh-review-card {
+  background: #fff;
+  color: #902929;
+  padding: 1.1rem 2rem;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+  border: 1px solid #E7BBBB;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.kdh-service-card:hover, .kdh-location-card:hover, .kdh-review-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(178,34,34,0.13);
+}
+.kdh-cta-section {
+  margin-top: 2.5rem;
+}
+.kdh-cta-btn {
+  background: #EC221F;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 1px solid #C00F0C;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.12);
+}
+.kdh-cta-btn:hover {
+  background: #fff;
+  color: #C92029;
+  border: 1px solid #FABA3D;
+}
+@media (max-width: 900px) {
+  .kdh-section {
+    padding: 1rem 0.5rem;
+  }
+  .kdh-service-card, .kdh-location-card, .kdh-review-card {
+    min-width: 120px;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+.kdh-home {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+}
+
+.kdh-hero-diagonal {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+.kdh-hero-bg-img {
+  position: absolute;
+  width: 100%;
+  height: 420px;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 0.7;
+}
+.kdh-hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 420px;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.kdh-hero-content-diagonal {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kdh-hero-title-diagonal {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+.kdh-hero-btns-diagonal {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.kdh-hero-cta-diagonal {
+  background: #EC221F;
+  color: #fff;
+  padding: 0.8rem 2.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 1px solid #C00F0C;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.12);
+}
+.kdh-hero-cta-diagonal:hover {
+  background: #d80f0f;
+  color: #f9ea14;
+  border: 1px solid #FABA3D;
+}
+.kdh-hero-secondary-diagonal {
+  background: #fff;
+  color: #C92029;
+  padding: 0.8rem 2.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 1px solid #C92029;
+  transition: background 0.2s, color 0.2s;
+}
+.kdh-hero-secondary-diagonal:hover {
+  background: #FABA3D;
+  color: #fff;
+}
+.kdh-hero-icons-diagonal {
+  margin-top: 1.5rem;
+}
+
+.kdh-welcome-section-diagonal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #E7BBBB;
+  padding: 2.5rem 4vw;
+  margin: 2rem 0;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.kdh-welcome-left-diagonal {
+  flex: 1;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.kdh-welcome-left-diagonal h2 {
+  color: #902929;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 0.1rem; /* moved slightly up by reducing bottom margin */
+  margin-top: -0rem;     /* adjust heading upward */
+}
+
+.kdh-welcome-left-diagonal p {
+  color: #1E1E1E;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.kdh-button-wrapper {
+  margin-top: 1rem;
+}
+
+.kdh-hero-cta-diagonal {
+  background-color: #d32f2f;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.kdh-hero-cta-diagonal:hover {
+  background-color: #b71c1c;
+}
+
+.kdh-welcome-right-diagonal {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.kdh-welcome-right-diagonal img {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+
+
+.kdh-leadership-section-diagonal {
+  background: #fff;
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+}
+.kdh-leadership-title-diagonal {
+  color: #C92029;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.kdh-leadership-cards-diagonal {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.kdh-leader-card-diagonal {
+  background: #E7BBBB;
+  border-radius: 16px;
+  padding: 2rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+  position: relative;
+}
+.kdh-leader-hexagon {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+}
+.kdh-leader-hexagon img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.kdh-leader-info-diagonal h3 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.kdh-leader-info-diagonal h2 {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.kdh-leader-info-diagonal p {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.kdh-section.kdh-services-section-diagonal {
+  background: #fff;
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: 12px;
+}
+.kdh-services-title-diagonal {
+  color: #902929;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.kdh-services-desc-diagonal {
+  color: #1E1E1E;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.kdh-services-list-diagonal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.kdh-service-card-diagonal {
+  background: #fff;
+  border: 1px solid #E7BBBB;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+  min-height: 260px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.kdh-service-card-diagonal img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+.kdh-service-card-diagonal h3 {
+  color: #C92029;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.kdh-service-card-diagonal p {
+  color: #1E1E1E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+.kdh-learn-more-diagonal {
+  color: #EC221F;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: auto;
+  transition: color 0.2s;
+}
+.kdh-learn-more-diagonal:hover {
+  color: #C92029;
+  text-decoration: underline;
+}
+.kdh-cta-btn-diagonal {
+  background: #EC221F;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 1px solid #C00F0C;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.12);
+  display: inline-block;
+}
+.kdh-cta-btn-diagonal:hover {
+  background: #fff;
+  color: #C92029;
+  border: 1px solid #FABA3D;
+}
+
+/* Google Reviews Widget */
+.kdh-google-reviews-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  min-height: 300px; /* Ensure enough space for the widget to load */
+}
+
+.kdh-google-reviews-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+}
+
+.kdh-google-reviews-btn {
+  display: inline-block;
+  background: #4285F4;
+  color: white !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #3367D6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kdh-google-reviews-btn:hover {
+  background: #3367D6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure the Elfsight widget is responsive */
+.elfsight-app-f93a321a-12e8-4626-b676-f5a3d3d03212 {
+  width: 100% !important;
+  min-height: 300px;
+}
+
+/* Loading state */
+.kdh-google-reviews-container:empty {
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
+
+.kdh-section.kdh-testimonials-section-diagonal {
+  background: #E7BBBB;
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: 12px;
+}
+.kdh-testimonials-title-diagonal {
+  color: #902929;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.kdh-testimonials-desc-diagonal {
+  color: #1E1E1E;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kdh-google-reviews-placeholder {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 0 2rem;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+}
+.kdh-google-reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+.kdh-google-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+.kdh-google-reviews-info h3 {
+  color: #1E1E1E;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.kdh-google-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+.kdh-stars {
+  color: #FABA3D;
+  font-size: 1.1rem;
+}
+.kdh-rating-text {
+  color: #1E1E1E;
+  font-weight: 600;
+}
+.kdh-review-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+.kdh-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.kdh-testimonial-card {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: left;
+  border-left: 4px solid #C92029;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.kdh-testimonial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.kdh-testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.kdh-testimonial-avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #E7BBBB;
+  border: 2px solid #C92029;
+}
+.kdh-testimonial-author h4 {
+  color: #1E1E1E;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.kdh-testimonial-stars {
+  color: #FABA3D;
+  font-size: 1rem;
+}
+.kdh-testimonial-text {
+  color: #1E1E1E;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.kdh-testimonial-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+.kdh-testimonials-cta {
+  margin-top: 1.5rem;
+}
+.kdh-google-reviews-btn {
+  background: #C92029;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.kdh-google-reviews-btn:hover {
+  background: #B22222;
+}
+
+@media (max-width: 1100px) {
+  .kdh-welcome-section-diagonal, .kdh-section.kdh-services-section-diagonal, .kdh-section.kdh-testimonials-section-diagonal {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .kdh-services-list-diagonal {
+    grid-template-columns: 1fr;
+  }
+  .kdh-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .kdh-leadership-cards-diagonal {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .kdh-google-reviews-placeholder {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+} 

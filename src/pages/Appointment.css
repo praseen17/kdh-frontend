@@ -1,0 +1,110 @@
+.kdh-appointment-page {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.kdh-heading {
+  text-align: center;
+  color: #B22222;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.kdh-banner {
+  background: #FFE76D;
+  color: #B22222;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.kdh-appointment-form input,
+.kdh-appointment-form select,
+.kdh-appointment-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.2s ease;
+}
+
+.kdh-appointment-form input:focus,
+.kdh-appointment-form select:focus,
+.kdh-appointment-form textarea:focus {
+  border-color: #B22222;
+  outline: none;
+}
+
+.kdh-btn {
+  background-color: #B22222;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+.kdh-btn:hover {
+  background-color: #8B0000;
+}
+
+.kdh-error {
+  color: red;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.kdh-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.kdh-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .kdh-appointment-page {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+}
+.kdh-appointment-card {
+  border: 2px solid #B22222; /* Red border */
+  border-radius: 16px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}

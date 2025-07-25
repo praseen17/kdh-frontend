@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Prescription Form Styling */
+.kdh-prescription-form {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px #b2222233;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+}
+.kdh-prescription-meds-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.kdh-prescription-meds-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.kdh-prescription-meds-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.kdh-add-btn {
+  background: #b22222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.kdh-remove-btn {
+  background: none;
+  color: #b22222;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Camps Admin Styling */
+.kdh-campsadmin-container {
+  background: #f8f8ff;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 32px 0;
+  box-shadow: 0 2px 12px #b2222233;
+}
+.kdh-campsadmin-title {
+  color: #B22222;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+.kdh-campsadmin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+.kdh-campsadmin-form input,
+.kdh-campsadmin-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.kdh-campsadmin-form button {
+  background: #b22222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.kdh-campsadmin-list-wrapper {
+  margin-top: 32px;
+}
+.kdh-campsadmin-list {
+  list-style: none;
+  padding: 0;
+}
+.kdh-campsadmin-card {
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px #b2222233;
+}
+.kdh-campsadmin-card-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.kdh-campsadmin-img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.kdh-campsadmin-card-content {
+  flex: 1;
+}
+.kdh-campsadmin-card-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+.kdh-campsadmin-card-desc {
+  margin-bottom: 4px;
+}
+.kdh-campsadmin-card-acts {
+  margin-bottom: 4px;
+}
+.kdh-campsadmin-card-link {
+  color: #007bff;
+  text-decoration: underline;
+}
+.kdh-campsadmin-delete-btn {
+  margin-left: auto;
+  color: #fff;
+  background: #b22222;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Refresh Button Styling */
+.kdh-refresh-btn {
+  background: #fff;
+  color: #b22222;
+  border: 2px solid #b22222;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background 0.2s, color 0.2s;
+}
+.kdh-refresh-btn:hover {
+  background: #b22222;
+  color: #fff;
+}

@@ -1,0 +1,109 @@
+/* PrescriptionPrint.css */
+.prescription-print-bg {
+  background: #e6f6fa;
+  min-height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.prescription-print-container {
+  background: #fff;
+  border-radius: 32px;
+  width: 900px;
+  min-height: 1100px;
+  box-shadow: 0 4px 32px #b2222233;
+  padding: 36px 48px 32px 48px;
+  position: relative;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.prescription-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+.prescription-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-top: 8px;
+}
+.prescription-hospital-info {
+  flex: 1;
+}
+.prescription-hospital-title {
+  color: #b22222;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.prescription-doctor {
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.prescription-address {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+.prescription-website {
+  color: #b22222;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.prescription-patient-info {
+  margin-top: 24px;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 40px;
+}
+.prescription-hr {
+  border: none;
+  border-top: 2px dashed #b22222;
+  margin: 32px 0 18px 0;
+}
+.prescription-details {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  margin-top: 24px;
+}
+.prescription-footer {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.prescription-doctors-list {
+  font-size: 1.1rem;
+  color: #b22222;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.prescription-footer-note {
+  font-size: 1.1rem;
+  color: #008080;
+  font-weight: 600;
+  margin-left: 32px;
+  align-self: flex-end;
+}
+@media print {
+  body, html, .prescription-print-bg, .prescription-print-container {
+    background: #fff !important;
+    box-shadow: none !important;
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .prescription-print-bg {
+    padding: 0 !important;
+  }
+  .prescription-print-container {
+    margin: 0 auto !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 0 0 0 0 !important;
+  }
+} 

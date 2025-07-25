@@ -1,0 +1,738 @@
+.kdh-about {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #1E1E1E;
+  margin: 0;
+  padding: 0;
+}
+
+.kdh-about-hero {
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 3.5rem 0 2.5rem 0;
+}
+.kdh-about-hero h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+.kdh-about-hero p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.kdh-about-story {
+  max-width: 900px;
+  margin: 2.5rem auto 0 auto;
+  padding: 0 1.5rem;
+}
+.kdh-about-story h2 {
+  color: #B22222;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+.kdh-about-story p {
+  color: #1E1E1E;
+  font-size: 1.08rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.kdh-about-mission-vision {
+  background: #E7BBBB;
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.kdh-about-mission-vision h3 {
+  color: #B22222;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.kdh-about-mission-vision p {
+  color: #1E1E1E;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+
+.kdh-about-camps {
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  padding: 0 1.5rem;
+}
+.kdh-about-camps h2 {
+  color: #B22222;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.kdh-about-camps-intro {
+  color: #1E1E1E;
+  font-size: 1.08rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kdh-about-camps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.kdh-about-camp-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.kdh-about-camp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.kdh-about-camp-img-placeholder {
+  width: 100%;
+  height: 160px;
+  background: #E7BBBB;
+  border-bottom: 3px solid #C92029;
+}
+.kdh-about-camp-content {
+  padding: 1.2rem 1.2rem 1rem 1.2rem;
+}
+.kdh-about-camp-content h3 {
+  color: #B22222;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.kdh-about-camp-content p {
+  color: #1E1E1E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.kdh-about-camp-content ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #1E1E1E;
+  font-size: 0.95rem;
+  list-style: disc;
+}
+.kdh-about-camp-content li {
+  margin-bottom: 0.3rem;
+}
+.kdh-about-camps-cta {
+  text-align: center;
+  background: #E7BBBB;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+.kdh-about-camps-cta p {
+  color: #1E1E1E;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.kdh-about-camps-contact-btn {
+  display: inline-block;
+  background: #C92029;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.kdh-about-camps-contact-btn:hover {
+  background: #B22222;
+}
+
+.kdh-about-hospital-info {
+  background: #E7BBBB;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+.kdh-about-hospital-info h2 {
+  color: #B22222;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.kdh-about-hospital-info-content {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.kdh-about-hospital-info-left {
+  flex: 1.2;
+}
+.kdh-about-hospital-info-left h3 {
+  color: #B22222;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.kdh-about-hospital-info-left ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #1E1E1E;
+  font-size: 1rem;
+  list-style: disc;
+}
+.kdh-about-hospital-info-right {
+  flex: 1;
+  min-width: 220px;
+}
+.kdh-about-hospital-info-right h3 {
+  color: #B22222;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  margin-top: 1.2rem;
+}
+.kdh-about-hospital-hours {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0.2rem 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+.kdh-about-hospital-emergency {
+  color: #B22222;
+  font-weight: 600;
+}
+.kdh-about-hospital-emergency-time {
+  color: #EC221F;
+  font-weight: 600;
+}
+.kdh-about-hospital-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0.7rem 0 0 0;
+  color: #1E1E1E;
+  font-size: 1rem;
+}
+.kdh-about-hospital-contact li {
+  margin-bottom: 0.3rem;
+}
+
+.kdh-about-cta-row {
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  padding: 0 1.5rem;
+}
+.kdh-about-cta-btn {
+  display: block;
+  width: 100%;
+  background: #C92029;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 1.1rem 0;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(201,32,41,0.08);
+  letter-spacing: 0.5px;
+}
+.kdh-about-cta-btn:hover {
+  background: #B22222;
+  color: #fff;
+}
+
+/* Camps Section */
+.kdh-about-camps {
+  padding: 2.5rem 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.kdh-about-camps h2 {
+  color: #B22222;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.kdh-about-camps-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Carousel Styles */
+.kdh-carousel-outer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  overflow: visible;
+}
+
+.kdh-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.kdh-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1.5rem 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 2rem;
+  scroll-snap-stop: always;
+  margin: 0 -0.5rem;
+}
+
+.kdh-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.kdh-about-camp-card {
+  flex: 0 0 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  scroll-snap-align: start;
+  position: relative;
+  z-index: 1;
+}
+
+.kdh-about-camp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.kdh-about-camp-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.kdh-about-camp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.kdh-about-camp-card:hover .kdh-about-camp-img img {
+  transform: scale(1.05);
+}
+
+.kdh-about-camp-content {
+  padding: 1.25rem;
+}
+
+.kdh-about-camp-content h3 {
+  color: #B22222;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+}
+
+.kdh-about-camp-content p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.kdh-about-camp-activities {
+  margin-bottom: 1.25rem;
+}
+
+.kdh-about-camp-activities strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.kdh-about-camp-activities ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kdh-about-camp-activities li {
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.kdh-about-camp-register-btn {
+  display: inline-block;
+  background: #B22222;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.kdh-about-camp-register-btn:hover {
+  background: #8e1a1a;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 2px solid #B22222;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #B22222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: #B22222;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1;
+  box-shadow: 0 6px 16px rgba(178, 34, 34, 0.3);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+/* Hide buttons on mobile */
+@media (max-width: 768px) {
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Ensure buttons are above the carousel track */
+.kdh-carousel-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.kdh-carousel-track {
+  position: relative;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .kdh-about-camp-card {
+    flex: 0 0 280px;
+  }
+  
+  .kdh-carousel-wrapper {
+    padding: 0 1rem;
+  }
+  
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kdh-about-camp-card {
+    flex: 0 0 260px;
+  }
+  
+  .kdh-about-camps {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .kdh-about-story, .kdh-about-team, .kdh-about-camps, .kdh-about-hospital-info, .kdh-about-cta-row {
+    padding: 0 1rem;
+  }
+  .kdh-about-hospital-info-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .kdh-about-camps-grid {
+    grid-template-columns: 1fr;
+  }
+} 
+.kdh-about-books {
+  margin: 3rem auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(178, 34, 34, 0.15);
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.kdh-about-books h2 {
+  color: #b22222;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.8px;
+  position: relative;
+}
+
+.kdh-about-book-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+  border-radius: 16px;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.kdh-about-book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.kdh-about-book-img-placeholder {
+  flex-shrink: 0;
+  width: 160px;
+  height: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(178, 34, 34, 0.2);
+}
+
+.kdh-about-book-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kdh-about-book-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.kdh-about-book-info h3 {
+  color: #faba3d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.kdh-about-book-info p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.kdh-about-book-info a {
+  color: #b22222;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.kdh-about-book-info a:hover {
+  color: #faba3d;
+}
+
+@media (max-width: 768px) {
+  .kdh-about-book-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0.8rem;
+  }
+
+  .kdh-about-books {
+    padding: 1.5rem 1rem;
+  }
+
+  .kdh-about-book-img-placeholder {
+    width: 140px;
+    height: 200px;
+  }
+
+  .kdh-about-book-info h3 {
+    text-align: center;
+  }
+
+  .kdh-about-book-info p {
+    text-align: center;
+  }
+}
+
+.kdh-about-camp-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #00000020;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn.left {
+  left: 0.5rem;
+}
+
+.carousel-btn.right {
+  right: 0.5rem;
+}
+.kdh-about-camps-cta {
+  background-color: #f5c6c6;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 20px;
+  max-width: 6 00px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kdh-about-camps-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.kdh-about-camps-contact-btn {
+  background-color: #c8102e;
+  color: white;
+  font-weight: 700;
+  padding: 0.9rem 2.2rem;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.kdh-about-camps-contact-btn:hover {
+  background-color: #a10d24;
+  transform: scale(1.05);
+}
+
+/* Optional: Mobile Responsive Tweaks */
+@media (max-width: 600px) {
+  .kdh-about-camps-text {
+    font-size: 1.25rem;
+  }
+
+  .kdh-about-camps-contact-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+.kdh-carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.kdh-about-camp-card {
+  flex: 0 0 auto;
+  width: 300px; /* or your preferred width */
+  margin-right: 16px;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 600px) {
+  .kdh-about-camp-card {
+    width: 85vw;
+    margin-right: 8px;
+    max-width: 95vw;
+  }
+  .kdh-carousel-track {
+    padding-left: 8vw;
+  }
+}

@@ -1,0 +1,172 @@
+/* Dashboard Layout */
+.kdh-dashboard {
+  background: #f7f7fa;
+  min-height: 100vh;
+  padding: 32px 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.kdh-dashboard-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(178,34,34,0.08);
+  margin-bottom: 32px;
+  padding: 32px 28px 24px 28px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kdh-dashboard-title {
+  color: #B22222;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+.kdh-dashboard-subtitle {
+  color: #FFD700;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+/* Forms */
+.kdh-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.kdh-form input,
+.kdh-form select,
+.kdh-form textarea {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #FFD700;
+  background: #f9f9f9;
+  font-size: 1.08rem;
+  color: #333;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.kdh-form input:focus,
+.kdh-form select:focus,
+.kdh-form textarea:focus {
+  border: 1.5px solid #B22222;
+  outline: none;
+  box-shadow: 0 2px 8px #FFD70044;
+}
+.kdh-form button {
+  background: #B22222;
+  color: #FFD700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 2.2rem;
+  font-weight: bold;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(178,34,34,0.08);
+}
+.kdh-form button:hover {
+  background: #FFD700;
+  color: #B22222;
+  box-shadow: 0 4px 16px #FFD70033;
+}
+
+/* Tables */
+.kdh-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(178,34,34,0.06);
+}
+.kdh-table th, .kdh-table td {
+  padding: 0.95rem 1.1rem;
+  text-align: left;
+}
+.kdh-table th {
+  background: #B22222;
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-bottom: 2px solid #FFD700;
+}
+.kdh-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+.kdh-table tr:hover {
+  background: #FFF3CD;
+}
+.kdh-table td {
+  font-size: 1.01rem;
+  color: #222;
+}
+
+/* Buttons */
+.kdh-btn {
+  background: #FFD700;
+  color: #B22222;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.kdh-btn:hover {
+  background: #B22222;
+  color: #FFD700;
+}
+
+/* Popups/Modals */
+.kdh-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.kdh-modal {
+  background: #fff;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px rgba(178,34,34,0.13);
+  text-align: center;
+  min-width: 320px;
+}
+.kdh-modal h2 {
+  color: #4BB543;
+  margin-bottom: 0.7rem;
+}
+
+/* Section Spacing */
+.kdh-section {
+  margin-bottom: 2.5rem;
+}
+
+/* Error/Success */
+.kdh-error {
+  color: #B22222;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+.kdh-success {
+  color: #4BB543;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .kdh-dashboard-section {
+    padding: 16px 4px 12px 4px;
+  }
+  .kdh-form {
+    max-width: 100%;
+  }
+} 
