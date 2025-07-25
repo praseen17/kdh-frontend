@@ -89,39 +89,34 @@ const Appointment = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic form validation
+    if (form.services.length === 0) {
+      setError("Please select at least one service.");
+      return;
+    }
     if (!form.date || !form.time) {
       setError("Please select a valid date and time.");
       return;
     }
-
-    const selectedDate = new Date(form.date);
-    if (selectedDate.getDay() === 0) {
-      setError("Appointments cannot be booked on Sundays.");
+    if (!form.name || !form.email || !form.phone) {
+      setError("Please fill in all required fields.");
       return;
     }
 
     setError("");
     setLoading(true);
 
-    const q = query(
-      collection(db, "appointments"),
-      where("date", "==", form.date),
-      where("time", "==", form.time)
-    );
-    const snap = await getDocs(q);
-    if (!snap.empty) {
-      setError("This time slot is already booked.");
-      setLoading(false);
-      return;
-    }
-
     try {
-      API.bookAppointment(form)
-        .then((res) => {
-          alert(res.data.message);
-        })
-        .catch((err) => console.error(err));
-      await addDoc(collection(db, "appointments"), form);
+      // Option 1: Use backend API (recommended)
+      const response = await API.bookAppointment(form);
+      if (response && response.data) {
+        alert(response.data.message || "Appointment booked successfully!");
+      } else {
+        throw new Error("No response from server");
+      }
+      
+      // Reset form on success
       setShowPopup(true);
       setForm({
         name: "",
@@ -137,10 +132,21 @@ const Appointment = () => {
       setDate("");
       setTime("");
     } catch (err) {
-      setError("Failed to book appointment.");
+      console.error("Appointment error:", err);
+      
+      // Check for network errors
+      if (err.code === 'ERR_NETWORK') {
+        setError("Network error. Please check your internet connection and try again.");
+      } else if (err.response) {
+        // Server responded with error status
+        setError(err.response.data?.message || "Failed to book appointment. Please try again.");
+      } else {
+        // Other errors
+        setError(err.message || "Failed to book appointment. Please try again.");
+      }
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   const closePopup = () => setShowPopup(false);
