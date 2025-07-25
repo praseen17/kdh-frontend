@@ -116,7 +116,7 @@ const AppointmentForm = ({ onSuccess, patientId }) => {
     }
     try {
       // Call the backend API to create the appointment and send email
-      const response = await fetch('http://localhost:5500/api/appointments', {
+      const response = await fetch('https://kdh-backend.onrender.com/api/appointments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
