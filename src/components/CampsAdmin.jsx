@@ -52,9 +52,9 @@ const CampsAdmin = () => {
         const options = {
           cloudName: 'dugxve4me',
           uploadPreset: 'dental_camps_upload',
-          sources: ['local'],
-          multiple: true, // Allow multiple file selection
-          maxFiles: 10,   // Maximum number of files that can be uploaded
+          sources: ['local', 'camera'],
+          multiple: true,
+          maxFiles: 10,
           maxFileSize: 5000000, // 5MB per file
           clientAllowedFormats: ['jpg', 'jpeg', 'png'],
           showPoweredBy: false,
@@ -66,7 +66,33 @@ const CampsAdmin = () => {
           cropping: true,
           croppingAspectRatio: 1.5,
           showSkipCropButton: false,
-          singleUploadAutoClose: false
+          singleUploadAutoClose: false,
+          // Add these for better error handling
+          theme: 'minimal',
+          styles: {
+            palette: {
+              window: '#FFFFFF',
+              sourceBg: '#F4F4F4',
+              windowBorder: '#90a0b3',
+              tabIcon: '#0078D4',
+              inactiveTabIcon: '#69778A',
+              menuIcons: '#5A616A',
+              link: '#0078D4',
+              action: '#FF620C',
+              inProgress: '#0078D4',
+              complete: '#20B832',
+              error: '#E74C3C',
+              textDark: '#000000',
+              textLight: '#FFFFFF'
+            },
+            fonts: {
+              default: null,
+              "sans-serif": {
+                url: null,
+                active: true
+              }
+            }
+          }
         };
         
         console.log('Widget options:', options);
@@ -79,22 +105,61 @@ const CampsAdmin = () => {
               
               if (error) {
                 console.error('Upload Widget error:', error);
-                setError(`Error: ${error.statusText || 'Failed to upload image'}`);
+                setError(`Error: ${error.statusText || error.message || 'Failed to upload image'}`);
                 setUploading(false);
                 return;
               }
               
-              if (result && result.event === 'success') {
-                const { secure_url, public_id } = result.info;
-                console.log('Upload successful:', { secure_url, public_id });
-                
-                if (secure_url) {
-                  setForm(prev => ({
-                    ...prev,
-                    photos: [...prev.photos, { url: secure_url, publicId: public_id }]
-                  }));
-                  setSuccess(`Successfully uploaded ${result.info.original_filename}`);
-                  setError('');
+              if (result && result.event) {
+                switch (result.event) {
+                  case 'success':
+                    const { secure_url, public_id, original_filename } = result.info;
+                    console.log('Upload successful:', { secure_url, public_id });
+                    
+                    if (secure_url) {
+                      setForm(prev => ({
+                        ...prev,
+                        photos: [...prev.photos, { url: secure_url, publicId: public_id }]
+                      }));
+                      setSuccess(`Successfully uploaded ${original_filename}`);
+                      setError('');
+                    }
+                    break;
+                    
+                  case 'close':
+                    console.log('Upload widget closed');
+                    setUploading(false);
+                    break;
+                    
+                  case 'abort':
+                    console.log('Upload aborted');
+                    setError('Upload was cancelled');
+                    setUploading(false);
+                    break;
+                    
+                  case 'display-changed':
+                    console.log('Widget display changed');
+                    break;
+                    
+                  case 'queues-start':
+                    console.log('Upload queue started');
+                    break;
+                    
+                  case 'queues-end':
+                    console.log('All uploads completed');
+                    setUploading(false);
+                    break;
+                    
+                  case 'retry':
+                    console.log('Retrying upload');
+                    break;
+                    
+                  case 'show-completed':
+                    console.log('Showing completed uploads');
+                    break;
+                    
+                  default:
+                    console.log('Unhandled event:', result.event);
                 }
               }
               
