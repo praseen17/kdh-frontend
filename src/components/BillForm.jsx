@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { db } from '../firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const BillForm = ({ onSuccess, patientId }) => {
   const [treatments, setTreatments] = useState([{ treatment: '', amount: '' }]);
@@ -39,11 +39,17 @@ const BillForm = ({ onSuccess, patientId }) => {
       const billData = {
         treatments,
         total,
-        date: form.date,
+        date: form.date || new Date().toISOString().split('T')[0],
         notes: form.notes,
         patientId,
+        status: 'unpaid',
+        createdAt: serverTimestamp()
       };
+      
+      // First save to the main bills collection
       const docRef = await addDoc(collection(db, 'bills'), billData);
+      
+      // Then save to the patient's subcollection with the globalId
       await addDoc(collection(db, 'patients', patientId, 'bills'), {
         ...billData,
         globalId: docRef.id,
