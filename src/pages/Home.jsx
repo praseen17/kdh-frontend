@@ -75,7 +75,7 @@ const Home = () => (
           </div>
           <div className="kdh-leader-info-diagonal">
             <h3>Mr. Kokonda Lakshman</h3>
-            <h2>M.C.A., C.E.O. </h2>
+            <h2>M.C.A. </h2>
             <h2>A Software Professional in a Reputed MNC.</h2>
             <p>Chief Executive Officer</p>
           </div>
@@ -86,7 +86,7 @@ const Home = () => (
           </div>
           <div className="kdh-leader-info-diagonal">
             <h3>Dr. Kokonda Madhavi Chandra</h3>
-            <h2>BDS., DDM, PGDHA (Apollo Hospital). M.D. </h2>
+            <h2>BDS., DDM, PGDHA (Apollo Hospital).</h2>
             <h2>Author of A Book CLINICAL PERIODONTICS.</h2>
             <p>Managing Director</p>
           </div>
