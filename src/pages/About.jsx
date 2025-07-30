@@ -166,7 +166,7 @@ const About = () => {
 
       {/* Books Section */}
       <section className="kdh-about-books">
-        <h2>Books Written</h2>
+        <h2>Authored</h2>
         <div className="kdh-about-book-card">
           <div className="kdh-about-book-img-placeholder">
             <img src="https://m.media-amazon.com/images/I/917-OmFbQEL._SL1500_.jpg" alt="Clinical Periodontics" />
