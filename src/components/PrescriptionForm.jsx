@@ -34,17 +34,30 @@ const PrescriptionForm = ({ patientId, onSuccess }) => {
     setError('');
     setSuccess('');
     try {
+      // First save to the main prescriptions collection
+      const docRef = await addDoc(collection(db, 'prescriptions'), {
+        medicines,
+        date: form.date || new Date().toISOString().split('T')[0],
+        patientId,
+        createdAt: serverTimestamp()
+      });
+
+      // Then save to the patient's subcollection with the globalId
       await addDoc(collection(db, 'patients', patientId, 'prescriptions'), {
         medicines,
-        date: form.date,
-        createdAt: serverTimestamp(),
+        date: form.date || new Date().toISOString().split('T')[0],
+        globalId: docRef.id, // Add the globalId
+        patientId,
+        createdAt: serverTimestamp()
       });
+      
       setSuccess('Prescription saved!');
       setMedicines([{ medicine: '', instructions: '' }]);
       setForm({ date: '' });
       if (onSuccess) onSuccess();
     } catch (err) {
-      setError('Failed to save prescription.');
+      console.error('Error saving prescription:', err);
+      setError('Failed to save prescription. ' + (err.message || ''));
     }
     setLoading(false);
   };
