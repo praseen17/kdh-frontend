@@ -53,23 +53,38 @@ const BillList = ({ patientId, isAdmin }) => {
         <table className="kdh-table">
           <thead>
             <tr>
-              <th>Treatment</th>
-              <th>Amount</th>
               <th>Date</th>
+              <th>Treatments</th>
+              <th>Total</th>
               <th>Notes</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {bills.map(b => (
-              <tr key={b.id}>
-                <td>{b.treatment}</td>
-                <td>{b.amount}</td>
-                <td>{b.date}</td>
-                <td>{b.notes}</td>
+            {bills.map(bill => (
+              <tr key={bill.id}>
+                <td>{bill.date}</td>
                 <td>
-                  <button onClick={() => handlePrint(b)}>Print</button>
-                  {isAdmin && <button onClick={() => handleDelete(b.id)} style={{ marginLeft: 8, color: 'red' }}>Delete</button>}
+                  <ul style={{ margin: 0, paddingLeft: 16 }}>
+                    {bill.treatments && bill.treatments.map((t, i) => (
+                      <li key={i}>
+                        {t.treatment} - ₹{t.amount}
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+                <td>₹{bill.total}</td>
+                <td>{bill.notes}</td>
+                <td>
+                  <button onClick={() => handlePrint(bill)}>Print</button>
+                  {isAdmin && (
+                    <button 
+                      onClick={() => handleDelete(bill.id)} 
+                      style={{ marginLeft: 8, color: 'red' }}
+                    >
+                      Delete
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
