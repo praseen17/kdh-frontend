@@ -12,18 +12,40 @@ const PrescriptionList = ({ patientId, isAdmin }) => {
 
   const loadPrescriptions = async () => {
     setLoading(true);
-    const snap = await getDocs(collection(db, 'patients', patientId, 'prescriptions'));
-    setPrescriptions(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    try {
+      // Try to get from the root collection first
+      let snap;
+      if (patientId) {
+        snap = await getDocs(collection(db, 'patients', patientId, 'prescriptions'));
+      } else {
+        snap = await getDocs(collection(db, 'prescriptions'));
+      }
+      setPrescriptions(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    } catch (err) {
+      console.error('Error loading prescriptions:', err);
+    }
     setLoading(false);
   };
 
   useEffect(() => { loadPrescriptions(); }, [patientId]);
   useEffect(() => { fetchAllPatients().then(setPatients); }, []);
 
-  const handleDelete = async (prescriptionId) => {
+  const handleDelete = async (prescription) => {
     if (!window.confirm('Delete this prescription?')) return;
-    await deleteDoc(doc(db, 'patients', patientId, 'prescriptions', prescriptionId));
-    loadPrescriptions();
+    try {
+      // Delete from both collections
+      if (prescription.globalId) {
+        await deleteDoc(doc(db, 'prescriptions', prescription.globalId));
+      }
+      if (patientId) {
+        await deleteDoc(doc(db, 'patients', patientId, 'prescriptions', prescription.id));
+      } else {
+        await deleteDoc(doc(db, 'prescriptions', prescription.id));
+      }
+      loadPrescriptions();
+    } catch (err) {
+      console.error('Error deleting prescription:', err);
+    }
   };
 
   const handlePrint = (prescription) => {
@@ -47,22 +69,38 @@ const PrescriptionList = ({ patientId, isAdmin }) => {
         <table className="kdh-table">
           <thead>
             <tr>
-              <th>Medicine</th>
-              <th>Instructions</th>
               <th>Date</th>
+              <th>Medicines</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {prescriptions.map(p => (
               <tr key={p.id}>
-                <td>{p.medicine}</td>
-                <td>{p.instructions}</td>
-                <td>{p.date}</td>
+                <td>{p.date || 'N/A'}</td>
+                <td>
+                  <ul style={{ margin: 0, paddingLeft: 16 }}>
+                    {p.medicines && p.medicines.length > 0 ? (
+                      p.medicines.map((med, idx) => (
+                        <li key={idx}>
+                          <strong>{med.medicine}</strong>: {med.instructions}
+                        </li>
+                      ))
+                    ) : (
+                      <li>No medicines listed</li>
+                    )}
+                  </ul>
+                </td>
                 <td>
                   <button onClick={() => handlePrint(p)}>Print</button>
-                  {isAdmin && <button onClick={() => handleDelete(p.id)} style={{ marginLeft: 8, color: 'red' }}>Delete</button>}
-                  {/* TODO: Add edit button for admin */}
+                  {isAdmin && (
+                    <button 
+                      onClick={() => handleDelete(p)} 
+                      style={{ marginLeft: 8, color: 'red' }}
+                    >
+                      Delete
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
