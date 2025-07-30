@@ -108,7 +108,7 @@ const Home = () => (
         <div className="kdh-service-card-diagonal">
           <img src={require('../assets/icons/download (1).png')} alt="Cosmetic Dentistry" style={{ width: 48, height: 48, objectFit: 'contain' }} />
           <h3>Cosmetic Dentistry and Orthodontics</h3>
-          <p>We offer teeth whitening procedures, veneers, ceramic crowns and other aesthetic treatments like full mouth rehabilitation,  smile designing for broken, discoursed , stained teeth  We offer all type of Orthodontics treatments like Braces, Clear aligners for all ages to correct your bite and align your teeth.To give you a confident, Healthy and a beautiful smile. </p>
+          <p>We offer teeth whitening procedures, veneers, ceramic crowns and other aesthetic treatments like full mouth rehabilitation,  smile designing for broken, discoloured , stained teeth  We offer all type of Orthodontics treatments like Braces, Clear aligners for all ages to correct your bite and align your teeth.To give you a confident, Healthy and a beautiful smile. </p>
           <a href="/services/cosmetic-dentistry" className="kdh-learn-more-diagonal">Learn More &rarr;</a>
         </div>
         <div className="kdh-service-card-diagonal">
