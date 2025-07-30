@@ -28,12 +28,14 @@ const loadCloudinaryWidget = (callback) => {
 const CampsAdmin = () => {
   const [camps, setCamps] = useState([]);
   const [form, setForm] = useState({
+    id: '',
     name: '',
     description: '',
     activities: '',
     photos: [],
     regLink: ''
   });
+  const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -219,6 +221,34 @@ const CampsAdmin = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleEditCamp = (camp) => {
+    setForm({
+      id: camp.id,
+      name: camp.name,
+      description: camp.description,
+      activities: camp.activities,
+      photos: camp.photos || [],
+      regLink: camp.regLink || ''
+    });
+    setIsEditing(true);
+    // Scroll to the form
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCancelEdit = () => {
+    setForm({
+      id: '',
+      name: '',
+      description: '',
+      activities: '',
+      photos: [],
+      regLink: ''
+    });
+    setIsEditing(false);
+    setError('');
+    setSuccess('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.description || !form.activities) {
@@ -240,27 +270,30 @@ const CampsAdmin = () => {
         name: form.name,
         description: form.description,
         activities: form.activities,
-        photos: form.photos, // Array of photo objects with url and publicId
+        photos: form.photos,
         regLink: form.regLink,
-        createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       };
       
-      console.log('Saving camp data to Firestore:', campData);
-      await addDoc(collection(db, 'camps'), campData);
+      if (isEditing && form.id) {
+        // Update existing camp
+        console.log('Updating camp:', campData);
+        await updateDoc(doc(db, 'camps', form.id), campData);
+        setSuccess(`Camp "${form.name}" updated successfully!`);
+      } else {
+        // Add new camp
+        campData.createdAt = new Date().toISOString();
+        console.log('Adding new camp:', campData);
+        await addDoc(collection(db, 'camps'), campData);
+        setSuccess(`Camp "${form.name}" added successfully with ${form.photos.length} photos!`);
+      }
       
-      setSuccess(`Camp "${form.name}" added successfully with ${form.photos.length} photos!`);
-      setForm({ 
-        name: '', 
-        description: '', 
-        activities: '', 
-        photos: [], 
-        regLink: '' 
-      });
+      // Reset form and reload camps
+      handleCancelEdit();
       loadCamps();
     } catch (err) {
-      console.error('Error adding camp:', err);
-      setError(`Failed to add camp: ${err.message}`);
+      console.error('Error saving camp:', err);
+      setError(`Failed to ${isEditing ? 'update' : 'add'} camp: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -276,6 +309,7 @@ const CampsAdmin = () => {
     <div className="kdh-campsadmin-container">
       <h2 className="kdh-campsadmin-title">Manage Dental Camps</h2>
       <form onSubmit={handleSubmit} className="kdh-campsadmin-form">
+        <h3>{isEditing ? 'Edit Camp' : 'Add New Camp'}</h3>
         <input name="name" value={form.name} onChange={handleChange} placeholder="Camp Name" required />
         <textarea name="description" value={form.description} onChange={handleChange} placeholder="Description" required />
         <textarea name="activities" value={form.activities} onChange={handleChange} placeholder="Activities (comma separated)" required />
@@ -367,9 +401,42 @@ const CampsAdmin = () => {
           </div>
         </div>
         <input name="regLink" value={form.regLink} onChange={handleChange} placeholder="Registration Link"/>
-        <button type="submit" disabled={loading}>{loading ? 'Saving...' : 'Add Camp'}</button>
-        {success && <div style={{ color: 'green' }}>{success}</div>}
-        {error && <div style={{ color: 'red' }}>{error}</div>}
+        <div className="form-actions" style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
+          <button 
+            type="submit" 
+            disabled={loading}
+            style={{
+              padding: '8px 16px',
+              backgroundColor: '#B22222',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading ? 0.7 : 1
+            }}
+          >
+            {loading ? 'Saving...' : (isEditing ? 'Update Camp' : 'Add Camp')}
+          </button>
+          {isEditing && (
+            <button 
+              type="button" 
+              onClick={handleCancelEdit}
+              disabled={loading}
+              style={{
+                padding: '8px 16px',
+                backgroundColor: '#6c757d',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer'
+              }}
+            >
+              Cancel
+            </button>
+          )}
+        </div>
+        {success && <div style={{ color: 'green', marginTop: '1rem' }}>{success}</div>}
+        {error && <div style={{ color: 'red', marginTop: '1rem' }}>{error}</div>}
       </form>
       <div className="kdh-campsadmin-list-wrapper">
         <h3 className="kdh-campsadmin-list-title">Existing Camps</h3>
@@ -448,7 +515,36 @@ const CampsAdmin = () => {
                   <div className="kdh-campsadmin-card-acts"><b>Activities:</b> {camp.activities}</div>
                   <a href={camp.regLink} target="_blank" rel="noopener noreferrer" className="kdh-campsadmin-card-link">Registration Link</a>
                 </div>
-                <button onClick={() => handleDelete(camp.id)} className="kdh-campsadmin-delete-btn">Delete</button>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button 
+                    onClick={() => handleEditCamp(camp)}
+                    className="kdh-campsadmin-edit-btn"
+                    style={{
+                      padding: '6px 12px',
+                      backgroundColor: '#17a2b8',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button 
+                    onClick={() => handleDelete(camp.id)} 
+                    className="kdh-campsadmin-delete-btn"
+                    style={{
+                      padding: '6px 12px',
+                      backgroundColor: '#dc3545',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </li>
           ))}
